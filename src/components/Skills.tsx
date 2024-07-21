@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import html from "../../public/images/tech/html.png";
 import css from "../../public/images/tech/css.png";
@@ -23,31 +25,43 @@ type SkillProps = {
 const Skill = ({ skillImg, skillName, x, y }: SkillProps) => {
   return (
     <motion.div
-      className={`flex w-[100px] h-[100px] p-[30px] flex-col items-center justify-center rounded-full font-semibold bg-dark text-light  shadow-dark cursor-pointer absolute`}
+      className={`flex w-[100px] h-[100px] p-[30px] flex-col items-center justify-center rounded-full font-semibold bg-dark text-light  shadow-dark cursor-pointer absolute dark:text-dark dark:bg-light
+        
+        lg:p-[20px] lg:w-[70px] lg:h-[70px] md:w-[50px] md:h-[50px]  
+        `}
       whileHover={{ scale: 1.05 }}
       initial={{ x: 0, y: 0 }}
-      whileInView={{ x: x, y: y }}
-      transition={{ duration: 1.5 }}
+      whileInView={{ x: x, y: y, transition: { duration: 1.5 } }}
       viewport={{ once: true }}
     >
       <Image
         src={skillImg}
         alt={skillName}
         className="rounded-full"
-        width={"100px"}
-        height={"100px"}
+        // width={"100px"}
+        // height={"100px"}
       />
-      <span className="text-[10px] text-light">{skillName}</span>
+      <span className="text-[10px] lg:text-[7px] sm:text-[7px] text-light dark:text-dark">
+        {skillName}
+      </span>
     </motion.div>
   );
 };
 const Skills = () => {
   return (
     <>
-      <h2 className="font-bold text-8xl mt-64 w-full text-center">Skills</h2>
-      <div className="w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight">
+      <h2 className="font-bold text-8xl  mt-64 w-full text-center md:text-6xl md:mt32 ">
+        Skills
+      </h2>
+      <div
+        className="w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight dark:bg-circularDark
+      
+      lg:h-[80vh] sm:h-[60vh] xs:h-[50vh] lg:bg-circularLightLg lg:dark:bg-circularDarkLg
+      md:bg-circularLightMd md:dark:bg-circularDarkMd sm:bg-circularLightSm sm:dark:bg-circularDarkSm 
+      "
+      >
         <motion.div
-          className="flex items-center justify-center rounded-full font-semibold bg-dark text-light p-8 shadow-dark cursor-pointer"
+          className="flex items-center justify-center rounded-full font-semibold bg-dark text-light dark:bg-light dark:text-dark p-8 shadow-dark cursor-pointer  lg:p-[20px] lg:w-[70px] lg:h-[70px] md:w-[50px] md:h-[50px]"
           whileHover={{ scale: 1.05 }}
         >
           web

@@ -10,7 +10,7 @@ const quoute = {
     opacity: 1,
     transition: {
       delay: 0.5,
-      staggerChildren:0.08,
+      staggerChildren: 0.08,
     },
   },
 };
@@ -30,23 +30,24 @@ const spanWord = {
 };
 
 type AnimatedTextProps = {
-   text: string;
-    className?: string;
-  };
-  
-  const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
+  text: string;
+  className?: string;
+};
+
+const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
   return (
-    <div className="w-full mx-auto flex items-center justify-center text-center overflow-hidden">
+    <div className="w-full mx-auto flex items-center justify-center text-center overflow-hidden  sm:py-0">
       <motion.h1
-        className={`inline-block w-full text-dark font-bold text-4xl capitalize ${className} `}
+        className={`inline-block w-full text-dark font-bold  capitalize ${className} dark:text-light`}
         variants={quoute}
         initial="initial"
         animate="animate"
       >
         {text.split(" ").map((word, index) => (
-          <motion.span key={word + "" + index} className="inline-block" 
-          variants={spanWord}
-          
+          <motion.span
+            key={word + "" + index}
+            className="inline-block"
+            variants={spanWord}
           >
             {word}&nbsp;
           </motion.span>

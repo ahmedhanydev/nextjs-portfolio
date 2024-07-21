@@ -7,7 +7,7 @@ const Logo = () => {
     <div className="flex justify-center items-center mt-2  ">
       <Link
         href="/"
-        className="h-16 w-16 bg-dark text-light text-2xl font-bold rounded-full flex justify-center items-center"
+        className="h-16 w-16 bg-dark border border-solid dark:border-light text-light text-2xl font-bold rounded-full flex justify-center items-center"
       >
         AH
       </Link>
