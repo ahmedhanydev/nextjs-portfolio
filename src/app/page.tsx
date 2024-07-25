@@ -13,7 +13,7 @@ import type { Metadata } from "next";
 import TransitionEffect from "@/components/TransitionEffect";
 export const metadata: Metadata = {
   title: "Ahmed | Home",
-  description: " My Protfolio",
+  description: " My Portfolio",
 };
 
 export default function Home() {

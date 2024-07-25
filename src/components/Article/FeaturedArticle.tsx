@@ -17,8 +17,8 @@ const FeaturedArticle = ({ img, title, time, summary, link }: ArticleProps) => {
   "
       >
         <FramerImage
-          src={img}
-          alt={title}
+          src={img || "/default-image.png"} // Fallback to a default image
+          alt={title ?? "No title"} // Provide a fallback alt text
           className="w-full h-auto"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}

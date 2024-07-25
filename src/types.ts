@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 
 export type ArticleProps = {
-  img?: StaticImageData | undefined;
+  img?: string | StaticImageData | undefined;
   title?: string | undefined;
   time?: string;
   summary?: string;

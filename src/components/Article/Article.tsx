@@ -47,8 +47,8 @@ const MovingImg = ({ title, img, link }: ArticleProps) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
         ref={imgRef}
-        src={img}
-        alt={title}
+        src={img || "/default-image.png"} // Fallback to a default image
+        alt={title ?? "No title"} // Provide a fallback alt text
         className="z-10 w-96 h-auto hidden absolute rounded-lg md:!hidden"
       />
     </Link>

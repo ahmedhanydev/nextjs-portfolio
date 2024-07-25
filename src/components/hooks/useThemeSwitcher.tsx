@@ -7,7 +7,8 @@ const useThemeSwitcher = () => {
 
   const initialMode =
     typeof window !== "undefined"
-      ? window.localStorage.getItem("theme") || mediaQuery.matches
+      ? window.localStorage.getItem("theme") ||
+        (mediaQuery && mediaQuery.matches)
         ? "dark"
         : "light"
       : "";
@@ -24,7 +25,7 @@ const useThemeSwitcher = () => {
         if (userPref) {
           let check = userPref
             ? userPref
-            : mediaQuery.matches
+            : mediaQuery && mediaQuery.matches
             ? "dark"
             : "light";
           setMode(check);
@@ -34,7 +35,7 @@ const useThemeSwitcher = () => {
             document.documentElement.classList.remove("dark");
           }
         } else {
-          let check = mediaQuery.matches ? "dark" : "light";
+          let check = mediaQuery && mediaQuery.matches ? "dark" : "light";
           setMode(check);
           window.localStorage.setItem("theme", check);
           if (check === "dark") {
@@ -46,9 +47,11 @@ const useThemeSwitcher = () => {
       };
       handleChange();
 
-      mediaQuery.addEventListener("change", handleChange);
+      mediaQuery && mediaQuery.addEventListener("change", handleChange);
 
-      return () => mediaQuery.removeEventListener("change", handleChange);
+      return () => {
+        mediaQuery && mediaQuery.removeEventListener("change", handleChange);
+      };
     }
   }, []);
 
