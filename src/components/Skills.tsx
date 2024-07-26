@@ -27,7 +27,7 @@ const Skill = ({ skillImg, skillName, x, y }: SkillProps) => {
     <motion.div
       className={`flex w-[100px] h-[100px] p-[30px] flex-col items-center justify-center rounded-full font-semibold bg-dark text-light  shadow-dark cursor-pointer absolute dark:text-dark dark:bg-light
         
-        lg:p-[20px] lg:w-[70px] lg:h-[70px] md:w-[50px] md:h-[50px]  
+        lg:p-[20px] lg:w-[70px] lg:h-[70px] md:w-[50px] md:h-[50px]   xs:w-[30px] xs:h-[30px]
         `}
       whileHover={{ scale: 1.05 }}
       initial={{ x: 0, y: 0 }}
