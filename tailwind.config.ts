@@ -21,7 +21,7 @@ const config: Config = {
       },
       colors: {
         dark: "#1b1b1b",
-        light: "#F2EDE3",
+        light: "#F0F8FF",
         primary: "#B63E96", // 240,86,199
         primaryDark: "#58E6D9", // 80,230,217
       },
@@ -30,25 +30,25 @@ const config: Config = {
       },
       backgroundImage: {
         circularLight:
-          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#F2EDE3 5px,#F2EDE3 100px)",
+          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#F0F8FF 5px,#F0F8FF 100px)",
 
         circularDark:
           "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 8px,#1b1b1b 100px)",
 
         circularLightLg:
-          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#F2EDE3 5px,#F2EDE3 80px)",
+          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#F0F8FF 5px,#F0F8FF 80px)",
 
         circularDarkLg:
           "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 8px,#1b1b1b 80px)",
 
         circularLightMd:
-          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#F2EDE3 5px,#f5f5f5 60px)",
+          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#F0F8FF 5px,#f5f5f5 60px)",
 
         circularDarkMd:
           "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 6px,#1b1b1b 60px)",
 
         circularLightSm:
-          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#F2EDE3 5px,#F2EDE3 40px)",
+          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#F0F8FF 5px,#F0F8FF 40px)",
 
         circularDarkSm:
           "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 4px,#1b1b1b 40px)",
