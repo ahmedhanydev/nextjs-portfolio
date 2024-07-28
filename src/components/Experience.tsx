@@ -73,10 +73,10 @@ const Experience = () => {
         <ul className="w-full flex flex-col items-start justify-between ml-4  xs:ml-2 ">
           <Details
             position="Frontend Developer"
-            company="As Freelancer"
+            company="Freelancing"
             companyLink="www.google.com"
             time="Feb 2023 - Present"
-            address="Freelancing"
+            address=""
             work="I create responsive, dynamic web applications for diverse clients, I build reusable components, manage state with Redux or Context API, and integrate APIs, ensuring high-quality, efficient code, My work focuses on delivering tailored, user-centric solutions through continuous learning and effective collaboration."
           />
           <Details

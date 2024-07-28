@@ -14,12 +14,22 @@ import TransitionEffect from "@/components/TransitionEffect";
 export const metadata: Metadata = {
   title: "Ahmed | Home",
   description: " My Portfolio",
+  icons: {
+    icon: ["/favicon.ico?v=4"],
+    apple: ["/apple-touch-icon.png?v=4"],
+    shortcut: ["/apple-touch-icon.png"],
+  },
 };
 
 export default function Home() {
   return (
     <>
       <TransitionEffect />
+
+      <Head>
+        <link rel="icon" href="/icon.ico" type="image/icon" sizes="32x32" />
+      </Head>
+
       <main className="flex items-center text-dark w-full max-h-screen dark:text-light">
         <MainLayout className="pt-0   ">
           <div className="flex items-center justify-between w-full lg:flex-col lg:text-center ">

@@ -11,7 +11,6 @@ const montserrat = Montserrat({
   variable: "--font-mont",
 });
 
-
 type PropsLayout = {
   children: React.ReactNode;
 };

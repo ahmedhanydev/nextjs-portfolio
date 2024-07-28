@@ -4,7 +4,9 @@ import Script from "next/script";
 export default function Document() {
   return (
     <Html>
-      <Head />
+      <Head>
+      <link rel="icon" href="/icon.ico" type="image/icon" sizes="32x32" />
+      </Head>
       <body>
         <Script id="theme-switcher" strategy="beforeInteractive">
           {`

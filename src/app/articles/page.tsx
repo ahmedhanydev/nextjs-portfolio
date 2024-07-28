@@ -14,6 +14,11 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Ahmed | Articles",
   description: " My Articles",
+  icons: {
+    icon: ["/favicon.ico?v=4"],
+    apple: ["/apple-touch-icon.png?v=4"],
+    shortcut: ["/apple-touch-icon.png"],
+  },
 };
 
 const Articles = () => {
