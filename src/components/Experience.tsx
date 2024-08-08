@@ -73,7 +73,7 @@ const Experience = () => {
         <ul className="w-full flex flex-col items-start justify-between ml-4  xs:ml-2 ">
           <Details
             position="Frontend Developer"
-            company="Freelancing"
+            company="Mostaql"
             companyLink="www.google.com"
             time="Feb 2023 - Present"
             address=""
