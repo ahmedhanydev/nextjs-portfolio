@@ -10,6 +10,8 @@ import project4 from "../../../public/images/projects/t-shop.jpg";
 import project5 from "../../../public/images/projects/nifty2.jpeg";
 import project6 from "../../../public/images/projects/carrent.png";
 import project7 from "../../../public/images/projects/banksit.png";
+import project8 from "../../../public/images/projects/Omnifood.png";
+import project9 from "../../../public/images/projects/dashboard.png";
 
 import Project from "../../components/Project/Project";
 import FeaturedProject from "../../components/Project/FeaturedProject";
@@ -75,6 +77,15 @@ const projects = () => {
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
+              <Project
+                typeName="#Next.js #CSS #MongoDB "
+                title="Admin Dashboard"
+                img={project9}
+                link="https://admin-dashboard-nextjs1.vercel.app/dashboard"
+                github="https://github.com/ahmedhanydev/nextjs-admin-dashboard"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
                 typeName="#React #CSS #framer-motion"
@@ -102,6 +113,17 @@ const projects = () => {
                 img={project7}
                 link="https://bankist-site-ahmed.netlify.app/"
                 github="https://github.com/ahmedhanydev/Kalbonyan-Elmarsos/tree/main/02-Udemy/-02-Js-Jonas/Projects/Bankist-Site"
+              />
+            </div>
+
+            <div className="col-span-6 sm:col-span-12">
+              {" "}
+              <Project
+                typeName="#Javascript #CSS #HTML"
+                title="Omnifood"
+                img={project8}
+                link="https://omnifood-sable-xi.vercel.app/"
+                github="https://github.com/ahmedhanydev/omnifood"
               />
             </div>
           </div>
