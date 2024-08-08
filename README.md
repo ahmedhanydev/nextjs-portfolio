@@ -1,15 +1,11 @@
 ## Ahmed Hany : Portfolio
 ### Features
-- Tailwind CSS for responsive styling
-- Custom Fonts integration
-- Navbar and Logo Components
-- Home and About Pages
-- Animated Text and Hire Me Circular Text
-- Footer, Skills, Experience & Education Components
-- Projects and Articles Pages
-- Dark Mode support
-- Responsive Design
-- Page Transition Effects
-### Tech Stack: Tailwind CSS, Next.js , Framer-motion
+- Responsive Design: Tailored layout for various screen sizes using Tailwind CSS.
+- Visual Appeal: Custom fonts, animated text effects, and page transitions.
+- Core Components: Navbar, logo, footer, and reusable sections for skills, experience, and education.
+- Content Pages: Home, about, projects, and articles.
+- Dark Mode: Customizable theme for user preference.
 
-#### [Deplyment](https://ahmedhany-portfolio-sage.vercel.app/)
+### Tech Stack: Tailwind CSS, Next.js , Framer Motion
+
+#### [Deployment Link](https://ahmedhany-portfolio-sage.vercel.app/)
