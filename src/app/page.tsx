@@ -6,7 +6,7 @@ import NabBar from "@/components/NavBar";
 import MainLayout from "@/components/MainLayout";
 import AnimatedText from "@/components/AnimatedText";
 import { LinkArrow } from "@/components/Icons";
-import portfolioImg from "../../public/images/profile/myimg2.jpg";
+import portfolioImg from "../../public/images/profile/profile.jpg";
 import Link from "next/link";
 import type { Metadata } from "next";
 
