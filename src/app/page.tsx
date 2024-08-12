@@ -6,7 +6,7 @@ import NabBar from "@/components/NavBar";
 import MainLayout from "@/components/MainLayout";
 import AnimatedText from "@/components/AnimatedText";
 import { LinkArrow } from "@/components/Icons";
-import portfolioImg from "../../public/images/profile/myimg2.png";
+import portfolioImg from "../../public/images/profile/myimg2.jpg";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -37,7 +37,7 @@ export default function Home() {
               <Image
                 src={portfolioImg}
                 alt="Ahmed hany"
-                className="w-2/3 h-1/2 lg:hidden md:inline-block md:w-full"
+                className="w-2/3 h-1/2 lg:hidden md:inline-block md:w-full rounded-full"
                 width={500}
                 height={500}
                 priority
