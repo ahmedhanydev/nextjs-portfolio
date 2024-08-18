@@ -105,7 +105,7 @@ const projects = () => {
                 github="https://github.com/ahmedhanydev/Trending-movies-app"
               />
             </div>
-            <div className="col-span-6 sm:col-span-12">
+            {/* <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
                 typeName="#Javascript #CSS #HTML"
@@ -114,7 +114,7 @@ const projects = () => {
                 link="https://bankist-site-ahmed.netlify.app/"
                 github="https://github.com/ahmedhanydev/Kalbonyan-Elmarsos/tree/main/02-Udemy/-02-Js-Jonas/Projects/Bankist-Site"
               />
-            </div>
+            </div> */}
 
             <div className="col-span-6 sm:col-span-12">
               {" "}
