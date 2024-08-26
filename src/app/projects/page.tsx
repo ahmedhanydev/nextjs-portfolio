@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const projects = () => {
   return (
     <>
-      <TransitionEffect />
+      {/* <TransitionEffect /> */}
 
       <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
         <MainLayout className="pt-16">

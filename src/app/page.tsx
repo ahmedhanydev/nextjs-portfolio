@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <TransitionEffect />
+      {/* <TransitionEffect /> */}
 
       <Head>
         <link rel="icon" href="/icon.ico" type="image/icon" sizes="32x32" />

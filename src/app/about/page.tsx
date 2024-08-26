@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const about = () => {
   return (
     <>
-      <TransitionEffect />
+      {/* <TransitionEffect /> */}
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <MainLayout className="pt-16">
           <AnimatedText

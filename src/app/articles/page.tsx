@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const Articles = () => {
   return (
     <>
-      <TransitionEffect />
+      {/* <TransitionEffect /> */}
       <Image src={noDataIcon} alt="no data" />
       {
         <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden ">

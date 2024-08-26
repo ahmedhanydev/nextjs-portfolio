@@ -56,7 +56,7 @@ const Education = () => {
         />
         <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2 ">
           <Details
-            type="Diploma In Computer Science"
+            type="Postgraduate Diploma in Computer Science"
             time="Sep 2023 - Jul 2025 "
             place="Cairo University"
             info="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering and Mathematics and other academic subjects."
