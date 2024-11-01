@@ -73,9 +73,21 @@ const Experience = () => {
         <ul className="w-full flex flex-col items-start justify-between ml-4  xs:ml-2 ">
           <Details
             position="Frontend Developer"
+            company="Quran Tab"
+            companyLink="https://chromewebstore.google.com/detail/quran-tab/afaihcdgkjebgabomemccdneglknjkdd?hl=en"
+            time="Nov 2023 - Present"
+            address=""
+            work="Enhanced User Experience: Resolved Arabic prayer time and date issues, improving user satisfaction by
+            addressing over 10 reported issues related to prayer times and Hijri date.
+            Technical Documentation: Created comprehensive developer documentation to facilitate future
+            development .
+            "
+          />
+          <Details
+            position="Frontend Developer"
             company="Mostaql"
-            companyLink="www.google.com"
-            time="Feb 2023 - Present"
+            companyLink=""
+            time="Feb 2023 - Nov 2023"
             address=""
             work="I create responsive, dynamic web applications for diverse clients, I build reusable components, manage state with Redux or Context API, and integrate APIs, ensuring high-quality, efficient code, My work focuses on delivering tailored, user-centric solutions through continuous learning and effective collaboration."
           />
