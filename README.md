@@ -101,12 +101,9 @@ Add image to `public/images/projects/` → reference in a project component (or 
 ### Potential Improvements / Roadmap
 - Add sitemap + robots directives generation (if not already automated)
 - Integrate MDX for Articles section
-- Add unit tests (Vitest is installed) for critical UI & hooks
 - Lighthouse budget + bundle analyzer integration
 - i18n (Next.js built-in routing) for multilingual support
 
-### Testing
-Vitest dependency present; configure a `vitest.config.ts` and create tests under `src/components/__tests__`. Run with: `pnpm vitest` (after config) or `pnpm test` alias if added.
 
 ### Deployment Notes
 - Ensure environment variables (if later added) are prefixed with NEXT_PUBLIC_ for client usage
