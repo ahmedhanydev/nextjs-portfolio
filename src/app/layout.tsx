@@ -1,31 +1,33 @@
-"use client";
-
 import { Montserrat } from "next/font/google";
-import { AnimatePresence } from "framer-motion";
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
 import "../styles/globals.css";
+import ClientProviders from "@/components/providers/ClientProviders";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-mont",
 });
 
-type PropsLayout = {
-  children: React.ReactNode;
+export const metadata = {
+  title: "Ahmed Portfolio",
+  description: "Personal portfolio of Ahmed – Frontend Developer",
 };
 
-export default function RootLayout({ children }: PropsLayout) {
+// Inline no-flash script for theme (very small, executed before paint)
+const themeScript = `(() => {try {const s=localStorage.getItem('theme');const m=window.matchMedia('(prefers-color-scheme: dark)').matches;const t=(s==='light'||s==='dark')?s:(m?'dark':'light');if(t==='dark') document.documentElement.classList.add('dark');document.documentElement.setAttribute('data-theme',t);} catch(e) {}})();`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <main
-          className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen flex flex-col justify-center items-center`}
-        >
-          <NavBar />
-          <AnimatePresence mode="wait">{children}</AnimatePresence>
-          <Footer />
-        </main>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: themeScript }}
+        />
+      </head>
+      <body className={`${montserrat.variable} font-mont bg-light dark:bg-dark min-h-screen`}>        
+        <ClientProviders>
+          {children}
+        </ClientProviders>
       </body>
     </html>
   );

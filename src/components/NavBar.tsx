@@ -10,6 +10,13 @@ import useHasMounted from "./hooks/useHasMounted";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+// Central nav config
+const NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+];
+
 type CustomLinkProps = {
   href: string;
   title: string;
@@ -70,23 +77,18 @@ const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher();
   const hasMounted = useHasMounted();
   const [isOpen, setIsOpen] = useState(false);
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
-  const handleModeClick = () => {
-    if (typeof setMode === "function") {
-      setMode(mode === "light" ? "dark" : "light");
-    }
-  };
+  const handleClick = () => setIsOpen(o => !o);
+  const handleModeClick = () => setMode(mode === "light" ? "dark" : "light");
   return (
     <header
-      className="w-full px-32 py-6 lg:px-8 font-medium flex items-center justify-between 
-    dark:text-light relative"
+      className="w-full px-32 py-6 lg:px-8 font-medium flex items-center justify-between dark:text-light relative"
     >
       <button
         className="flex-col justify-center items-center hidden lg:flex"
         onClick={handleClick}
-        aria-label="Menu"
+        aria-label="Toggle navigation menu"
+        aria-expanded={isOpen}
+        aria-controls="mobile-menu"
       >
         <span
           className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm  ${
@@ -111,11 +113,10 @@ const NavBar = () => {
         <div>
           <Logo />
         </div>
-        <nav>
-          <CustomLink href="/" className="mr-4" title="Home" />
-          <CustomLink href="/about" className="mx-4" title="About" />
-          <CustomLink href="/projects" className="mx-4" title="Projects" />
-          {/* <CustomLink href="/articles" className="ml-4" title="Articles" /> */}
+        <nav aria-label="Primary" className="flex">
+          {NAV_LINKS.map(l => (
+            <CustomLink key={l.href} href={l.href} className="mx-4 first:ml-0" title={l.label} />
+          ))}
         </nav>
         <nav className="flex justify-center items-center ">
           <motion.a
@@ -123,6 +124,7 @@ const NavBar = () => {
             whileTap={{ scale: 0.9 }}
             href="https://github.com/ahmedhanydev"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="Github Account"
           >
             <GithubIcon className="w-10 mr-3" />
@@ -132,17 +134,20 @@ const NavBar = () => {
             whileTap={{ scale: 0.9 }}
             href="https://www.linkedin.com/in/ahmedhanyabdelhamid/"
             target="_blank"
-            aria-label="Linkedin Account"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Account"
           >
             <LinkedInIcon className="w-6 ml-3" />
           </motion.a>
 
+            {/* Theme toggle */}
           <button
             onClick={handleModeClick}
             className={`ml-6 flex items-center justify-center rounded-full p-1 ${
               mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
             }`}
-            aria-label="dark mode"
+            aria-label="Toggle dark mode"
+            aria-pressed={mode === "dark"}
           >
             {hasMounted && mode === "dark" ? (
               <SunIcon className={"fill-dark"} />
@@ -154,36 +159,15 @@ const NavBar = () => {
       </div>
       {isOpen ? (
         <motion.div
+          id="mobile-menu"
           initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
           animate={{ scale: 1, opacity: 1 }}
-          className="min-w-[70vw] z-30 flex flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-    bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32"
+          className="min-w-[70vw] z-30 flex flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32"
         >
-          <nav className="flex mb-2 flex-col items-center justify-center ">
-            <CustomMobileLink
-              href="/"
-              className=""
-              title="Home"
-              toggle={handleClick}
-            />
-            <CustomMobileLink
-              href="/about"
-              className=""
-              title="About"
-              toggle={handleClick}
-            />
-            <CustomMobileLink
-              href="/projects"
-              className=""
-              title="Projects"
-              toggle={handleClick}
-            />
-            {/* <CustomMobileLink
-              href="/articles"
-              className=""
-              title="Articles"
-              toggle={handleClick}
-            /> */}
+          <nav aria-label="Mobile" className="flex mb-2 flex-col items-center justify-center ">
+            {NAV_LINKS.map(l => (
+              <CustomMobileLink key={l.href} href={l.href} title={l.label} toggle={handleClick} />
+            ))}
           </nav>
           <nav className="flex justify-center items-center">
             <motion.a
@@ -191,6 +175,7 @@ const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               href="https://github.com/ahmedhanydev"
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="Github Account"
             >
               <GithubIcon className="w-10 mr-3 bg-light rounded-full dark:bg-dark" />
@@ -200,7 +185,8 @@ const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               href="https://www.linkedin.com/in/ahmedhanyabdelhamid/"
               target="_blank"
-              aria-label="Linkedin Account"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Account"
             >
               <LinkedInIcon className="w-6 ml-3" />
             </motion.a>
@@ -210,7 +196,8 @@ const NavBar = () => {
               className={`ml-6 flex items-center justify-center rounded-full p-1 ${
                 mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
               }`}
-              aria-label="dark mode"
+              aria-label="Toggle dark mode"
+              aria-pressed={mode === "dark"}
             >
               {hasMounted && mode === "dark" ? (
                 <SunIcon className={"fill-dark"} />

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const quoute = {
   initial: {
@@ -35,19 +35,21 @@ type AnimatedTextProps = {
 };
 
 const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
+  const reduceMotion = useReducedMotion();
+  const words = text.split(" ");
   return (
-    <div className="w-full mx-auto flex items-center justify-center text-center overflow-hidden  sm:py-0">
+    <div className="w-full mx-auto flex items-center justify-center text-center overflow-hidden sm:py-0">
       <motion.h1
-        className={`inline-block w-full text-dark font-bold  capitalize ${className} dark:text-light`}
-        variants={quoute}
-        initial="initial"
-        animate="animate"
+        className={`inline-block w-full text-dark font-bold capitalize ${className} dark:text-light`}
+        variants={reduceMotion ? undefined : quoute}
+        initial={reduceMotion ? undefined : "initial"}
+        animate={reduceMotion ? undefined : "animate"}
       >
-        {text.split(" ").map((word, index) => (
+        {words.map((word, index) => (
           <motion.span
-            key={word + "" + index}
+            key={word + index}
             className="inline-block"
-            variants={spanWord}
+            variants={reduceMotion ? undefined : spanWord}
           >
             {word}&nbsp;
           </motion.span>
