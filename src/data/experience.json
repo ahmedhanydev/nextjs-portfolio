@@ -1,0 +1,58 @@
+[
+    {
+    "position": "Frontend Developer",
+    "company": "57357 Children’s Cancer Hospital Foundation ",
+    "companyLink": "https://www.57357.org ",
+    "time": "Dec 2024 - Present",
+    "address": "Cairo, Egypt",
+  "work":"Developed the main hospital website from scratch using Next.js, serving as a key digital touchpoint for one of the largest pediatric cancer hospitals in the Middle East.\n• Built a full-featured content management dashboard to enable internal teams to manage and publish content efficiently.\n• Executed complete SEO optimization (dynamic & static meta tags, automated sitemap, robots.txt, link strategy), achieving 100% SEO audit score.\n• Worked on Pharmacy QMS system improvements by fixing bugs, enhancing UI/UX, and implementing new features based on clinical team feedback."
+},
+{
+  "position": "Frontend Developer",
+  "company": "LMFoundry",
+  "companyLink": "https://www.lmfoundry.com/",
+  "time": "Feb 2025 - Present",
+  "address": "Part-time, Remote",
+  "work": "Built AI-powered dashboard in React/TypeScript with smooth UX and reusable components.\n• Developed real-time streaming chat via SSE, dynamic model switching, and file/image uploads with Zod/Yup validation.\n• Refactored API handling for Azure OpenAI configs, reducing request errors and improving backend reliability."
+},
+{
+  "position": "Frontend Developer",
+  "company": "7awadeet Social-media Platform",
+  "companyLink": "https://play.google.com/store/apps/details?id=com.hawadeet.app&hl=en",
+  "time": "Jul 2024 - Dec 2024",
+  "address": "Contract, Remote",
+  "work": "Built a cross-platform storytelling app for web and mobile.\n• Enhanced state management and data fetching using Zustand and React Query for a seamless user experience.\n• Created a scalable and reusable UI library using NativeWind and Glue Stack UI to accelerate development and maintain design consistency.\n• Set up coherent navigation structures using Expo Router (mobile) and Next.js App Router (web)."
+},
+  {
+    "position": "Frontend Developer",
+    "company": "Quran Tab",
+    "companyLink": "https://chromewebstore.google.com/detail/quran-tab/afaihcdgkjebgabomemccdneglknjkdd?hl=en",
+    "time": "Nov 2023 - Present",
+    "address": "",
+    "work": "Enhanced User Experience: Resolved Arabic prayer time and date issues, improving user satisfaction by addressing over 10 reported issues related to prayer times and Hijri date. Technical Documentation: Created comprehensive developer documentation to facilitate future development."
+  },
+{
+  "position": "Frontend Developer",
+  "company": "Mostaql",
+  "companyLink": "",
+  "time": "Feb 2023 - Nov 2023",
+  "address": "",
+  "work": "Delivered multiple production-grade freelance projects across diﬀerent industries including fintech, accounting, video portfolios, and branding.\n• Worked with modern frontend stacks (Next.js, Tailwind CSS, Zustand, React Query) and integrated CMS, localization, and API-driven backends.\n• Key projects include: LitePay (virtual card platform), Jazr.io (restaurant accounting), Brand Leveling, and Aliyn (see Projects section).\n• Also contributed to localized platforms and portfolio sites: Social Magic Agency, FAWZY Portfolio, Microshabab, and Smartgamesapp — with a focus on UI enhancement, media optimization, and performance tuning."
+},
+  {
+    "position": "Frontend Developer",
+    "company": "Why Not Tech",
+    "companyLink": "https://www.whynot-tech.com/",
+    "time": "Feb 2023 - May 2023",
+    "address": "Freelancing",
+    "work": "Developed a responsive and user-friendly e-commerce website using ReactJS, focusing on a seamless user experience and complex UI elements."
+  },
+  {
+    "position": "Software Engineer Intern",
+    "company": "Kalbonyan Elmarsos",
+    "companyLink": "https://www.linkedin.com/company/%D9%83%D8%A7%D9%84%D8%A8%D9%86%D9%8A%D8%A7%D9%86-%D8%A7%D9%84%D9%85%D8%B1%D8%B5%D9%88%D8%B5/",
+    "time": "Apr 2022 - Oct 2022",
+    "address": "Egypt",
+    "work": "This is an online internship with mentoring from senior software engineers, Gives me learning tasks that sculpted my software and programming skill, During this Internship I do about 6 projects now and taken 15 Project-Based courses."
+  }
+]

@@ -3,6 +3,7 @@
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import LiIcon from "./LiIcon";
+import experienceData from "@/data/experience.json";
 
 type DetailsProps = {
   position: string;
@@ -12,6 +13,9 @@ type DetailsProps = {
   address: string;
   work: string;
 };
+
+const typedExperienceData = experienceData as DetailsProps[];
+
 const Details = ({
   position,
   company,
@@ -71,44 +75,17 @@ const Experience = () => {
           className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]"
         />
         <ul className="w-full flex flex-col items-start justify-between ml-4  xs:ml-2 ">
-          <Details
-            position="Frontend Developer"
-            company="Quran Tab"
-            companyLink="https://chromewebstore.google.com/detail/quran-tab/afaihcdgkjebgabomemccdneglknjkdd?hl=en"
-            time="Nov 2023 - Present"
-            address=""
-            work="Enhanced User Experience: Resolved Arabic prayer time and date issues, improving user satisfaction by
-            addressing over 10 reported issues related to prayer times and Hijri date.
-            Technical Documentation: Created comprehensive developer documentation to facilitate future
-            development .
-            "
-          />
-          <Details
-            position="Frontend Developer"
-            company="Mostaql"
-            companyLink=""
-            time="Feb 2023 - Nov 2023"
-            address=""
-            work="I create responsive, dynamic web applications for diverse clients, I build reusable components, manage state with Redux or Context API, and integrate APIs, ensuring high-quality, efficient code, My work focuses on delivering tailored, user-centric solutions through continuous learning and effective collaboration."
-          />
-          <Details
-            position="Frontend Developer"
-            company="Why Not Tech"
-            companyLink="https://www.whynot-tech.com/"
-            time="Feb 2023 - May 2023"
-            address="Freelancing"
-            work="Developed a responsive and user-friendly e-commerce website using ReactJS, focusing on a seamless user experience and complex UI elements."
-          />
-          <Details
-            position="Software Engineer Intern"
-            company="Kalbonyan Elmarsos"
-            companyLink="https://www.linkedin.com/company/%D9%83%D8%A7%D9%84%D8%A8%D9%86%D9%8A%D8%A7%D9%86-%D8%A7%D9%84%D9%85%D8%B1%D8%B5%D9%88%D8%B5/"
-            time="Apr 2022 - Oct 2022"
-            address="Egypt"
-            work="This is an online internship with mentoring from senior software engineers,
-                  Gives me learning tasks that sculpted my software and programming skill,
-                  During this Internship I do about 6 projects now and taken 15 Project-Based courses."
-          />
+          {typedExperienceData.map((item) => (
+            <Details
+              key={item.company + item.time}
+              position={item.position}
+              company={item.company}
+              companyLink={item.companyLink}
+              time={item.time}
+              address={item.address}
+              work={item.work}
+            />
+          ))}
         </ul>
       </div>
     </div>

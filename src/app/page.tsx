@@ -38,7 +38,7 @@ export default function Home() {
             </p>
             <div className="mt-2 flex items-center justify-center self-center lg:self-center">
               <Link
-                href="/Ahmed Hany Cv Frontend Developer.pdf"
+                href="/Ahmed Hany Frontend CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:text-dark dark:bg-light hover:dark:text-light hover:dark:bg-dark hover:dark:border-light md:p-2 md:px-4 md:text-base"
