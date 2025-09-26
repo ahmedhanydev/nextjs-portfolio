@@ -22,8 +22,11 @@ const AnimatedNumbers = ({ value }: { value: number }) => {
   
     useEffect(() => {
       springValue.on("change", (latest) => {
-        if (ref.current && latest.toFixed(0) <= value) {
-          ref.current.textContent = latest.toFixed(0);
+        if (ref.current) {
+          const rounded = Number(latest.toFixed(0));
+          if (rounded <= value) {
+            ref.current.textContent = rounded.toString();
+          }
         }
       });
     }, [springValue, value]);
