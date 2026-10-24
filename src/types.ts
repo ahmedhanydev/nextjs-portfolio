@@ -1,19 +1,35 @@
-import Image, { StaticImageData } from "next/image";
-
-export type ArticleProps = {
-  img?: string | StaticImageData | undefined;
-  title?: string | undefined;
-  time?: string;
-  summary?: string;
-  link: string;
-  date?: string;
+export type Fact = {
+  value: number;
+  suffix?: string;
+  label: string;
 };
 
-export type ProjectProps = {
-  typeName: string;
+export type Project = {
   title: string;
-  summary?: string;
-  img: StaticImageData;
-  link: string;
-  github: string;
+  desc: string;
+  kind: string;
+  stack: string;
+  img: string;
+  href: string;
+};
+
+export type Job = {
+  years: string;
+  company: string;
+  role: string;
+  now?: boolean;
+  bullets: string[];
+};
+
+export type Degree = {
+  years: string;
+  title: string;
+  school: string;
+  tags: string[];
+  mark: string;
+};
+
+export type StackGroup = {
+  title: string;
+  items: string[];
 };

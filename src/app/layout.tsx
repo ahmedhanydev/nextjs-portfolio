@@ -1,33 +1,81 @@
-import { Montserrat } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Instrument_Serif, JetBrains_Mono, Manrope } from "next/font/google";
 import "../styles/globals.css";
-import ClientProviders from "@/components/providers/ClientProviders";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import Cursor from "@/components/Cursor";
+import Reveal from "@/components/Reveal";
+import { site } from "@/data/portfolio";
 
-const montserrat = Montserrat({
+const serif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-mont",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+});
+const sans = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+});
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
 });
 
-export const metadata = {
-  title: "Ahmed Portfolio",
-  description: "Personal portfolio of Ahmed – Frontend Developer",
+const title = `${site.name} — ${site.role}`;
+const ogDescription = "Fast, accessible web products with React & Next.js. Based in Cairo, working worldwide.";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  title,
+  description: site.description,
+  openGraph: { type: "website", title, description: ogDescription, images: [site.portrait] },
+  twitter: { card: "summary_large_image", title, description: ogDescription, images: [site.portrait] },
+  icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
+  manifest: "/site.webmanifest",
 };
 
-// Inline no-flash script for theme (very small, executed before paint)
-const themeScript = `(() => {try {const s=localStorage.getItem('theme');const m=window.matchMedia('(prefers-color-scheme: dark)').matches;const t=(s==='light'||s==='dark')?s:(m?'dark':'light');if(t==='dark') document.documentElement.classList.add('dark');document.documentElement.setAttribute('data-theme',t);} catch(e) {}})();`;
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  colorScheme: "dark light",
+  themeColor: "#14120F",
+};
+
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: site.role,
+  url: site.url,
+  address: { "@type": "PostalAddress", addressLocality: "Cairo", addressCountry: "EG" },
+  knowsAbout: ["React", "Next.js", "TypeScript", "Technical SEO", "Accessibility"],
+  sameAs: site.socials.map((s) => s.href),
+};
+
+// Inline no-flash script: apply the saved theme before paint (dark is the default)
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;}catch(e){}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`js ${serif.variable} ${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
-        <script
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: themeScript }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
       </head>
-      <body className={`${montserrat.variable} font-mont bg-light dark:bg-dark min-h-screen`}>        
-        <ClientProviders>
-          {children}
-        </ClientProviders>
+      <body>
+        <a className="skip" href="#main">
+          Skip to content
+        </a>
+        <div className="grain" aria-hidden="true" />
+        <Cursor />
+        <Nav />
+        <main id="main">{children}</main>
+        <Footer />
+        <Reveal />
       </body>
     </html>
   );
