@@ -148,19 +148,23 @@ section { padding: 140px 0 }
 .p-card { flex: none; width: min(560px, 78vw, calc((100vh - 525px) * 1.33)); text-decoration: none; display: block }
 .p-card .shot { position: relative; aspect-ratio: 4/3; border-radius: 18px; overflow: hidden; background: var(--card); border: 1px solid var(--line) }
 .p-card img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 1s cubic-bezier(.2, .7, .2, 1), filter .6s }
-.p-card:hover img { transform: scale(1.05) }
 .p-card .num { position: absolute; left: 16px; top: 14px; font: 400 12px var(--mono); color: #fff; padding: 4px 10px; border-radius: 999px; background: rgba(10, 8, 6, .55); backdrop-filter: blur(6px) }
 .p-card .go { position: absolute; right: 14px; bottom: 14px; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; transform: scale(0) rotate(-45deg); transition: transform .5s cubic-bezier(.2, .7, .2, 1) }
-.p-card:hover .go { transform: scale(1) rotate(0) }
 .p-kind { display: block; margin-top: 14px; color: var(--accent); letter-spacing: .04em }
-.p-card .row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-top: 6px }
+.p-card .row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; margin-top: 6px }
 .p-card h3 { font: 400 40px/1 var(--serif); margin: 0; transition: color .3s }
-.p-card:hover h3 { color: var(--accent) }
 .p-desc { margin: 8px 0 0; color: color-mix(in srgb, var(--ink) 78%, var(--bg)); font-size: 15px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden }
-.p-host { flex: none; color: var(--muted); white-space: nowrap; transition: color .3s }
+.p-host { min-width: 0; max-width: 100%; overflow: hidden; text-overflow: ellipsis; color: var(--muted); white-space: nowrap; transition: color .3s }
+/* Card highlight: mouse hover only (taps on phones would leave it stuck), plus keyboard focus */
+@media (hover: hover) {
+  .p-card:hover img { transform: scale(1.05) }
+  .p-card:hover .go { transform: scale(1) rotate(0) }
+  .p-card:hover :is(h3, .p-host) { color: var(--accent) }
+}
+.p-card:focus-visible .go { transform: scale(1) rotate(0) }
+.p-card:focus-visible :is(h3, .p-host) { color: var(--accent) }
 .p-stack { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px }
 .p-stack li { padding: 3px 10px; border: 1px solid var(--line-2); border-radius: 999px; font-size: 12.5px; color: var(--muted) }
-.p-card:hover .p-host { color: var(--accent) }
 .p-card.more .shot { display: grid; place-items: center; background: var(--bg-2); border-style: dashed }
 .p-card .shot-text { display: grid; place-items: center; background: radial-gradient(120% 90% at 30% 20%, color-mix(in srgb, var(--accent) 22%, var(--card)), var(--bg-2)) }
 .p-card .shot-text > span:first-child { font: italic 400 clamp(32px, 3vw, 44px)/1 var(--serif); letter-spacing: -.02em; padding: 24px; text-align: center }
