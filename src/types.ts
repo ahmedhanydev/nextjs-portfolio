@@ -9,7 +9,8 @@ export type Project = {
   desc: string;
   kind: string;
   stack: string;
-  img: string;
+  // Screenshot path; without one the card shows a text panel with the site name
+  img?: string;
   href: string;
 };
 
@@ -29,7 +30,18 @@ export type Degree = {
   mark: string;
 };
 
-export type StackGroup = {
+export type SkillGroup = {
   title: string;
   items: string[];
+};
+
+export type Testimonial = {
+  name: string;
+  role: string;
+  initials: string;
+  pull: string;
+  text: string[];
+  source?: string;
+  // Set for quotes not in English; rendered with lang/dir so it reads and is announced correctly
+  lang?: "ar";
 };

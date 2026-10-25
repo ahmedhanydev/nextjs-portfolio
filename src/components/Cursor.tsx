@@ -30,10 +30,8 @@ export default function Cursor() {
     const onOver = (e: MouseEvent) => {
       const t = e.target as Element;
       const card = !!t.closest(".p-card");
-      const hero = !!t.closest(".hero") && !t.closest("a,button");
       body.classList.toggle("on-card", card);
-      body.classList.toggle("on-hero", hero && !card);
-      body.classList.toggle("on-link", !card && !!t.closest("a,button,summary,.box li"));
+      body.classList.toggle("on-link", !card && !!t.closest("a,button,summary"));
     };
 
     const magnets = Array.from(document.querySelectorAll<HTMLElement>("[data-magnetic]"));
@@ -60,7 +58,7 @@ export default function Cursor() {
         b.removeEventListener("mousemove", pull);
         b.removeEventListener("mouseleave", release);
       });
-      body.classList.remove("cursor", "on-card", "on-hero", "on-link");
+      body.classList.remove("cursor", "on-card", "on-link");
     };
   }, []);
 

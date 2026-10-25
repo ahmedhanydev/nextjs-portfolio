@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, JetBrains_Mono, Manrope } from "next/font/google";
+import { Instrument_Serif, JetBrains_Mono, Manrope, Noto_Naskh_Arabic } from "next/font/google";
 import "../styles/globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -23,6 +23,13 @@ const mono = JetBrains_Mono({
   weight: ["400", "500"],
   variable: "--font-mono",
 });
+// Only used by Arabic testimonials, so it isn't preloaded
+const arabic = Noto_Naskh_Arabic({
+  subsets: ["arabic"],
+  weight: ["400", "500"],
+  variable: "--font-arabic",
+  preload: false,
+});
 
 const title = `${site.name} — ${site.role}`;
 const ogDescription = "Fast, accessible web products with React & Next.js. Based in Cairo, working worldwide.";
@@ -31,8 +38,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title,
   description: site.description,
-  openGraph: { type: "website", title, description: ogDescription, images: [site.portrait] },
-  twitter: { card: "summary_large_image", title, description: ogDescription, images: [site.portrait] },
+  openGraph: { type: "website", title, description: ogDescription, images: [site.ogImage] },
+  twitter: { card: "summary_large_image", title, description: ogDescription, images: [site.ogImage] },
   icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
   manifest: "/site.webmanifest",
 };
@@ -61,7 +68,7 @@ const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`js ${serif.variable} ${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`js ${serif.variable} ${sans.variable} ${mono.variable} ${arabic.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />

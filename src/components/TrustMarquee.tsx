@@ -1,22 +1,34 @@
+"use client";
+
+import { useState } from "react";
 import { clients } from "@/data/portfolio";
 
 export default function TrustMarquee() {
+  // Moving content needs a way to stop it (WCAG 2.2.2); hover pauses too, via CSS
+  const [paused, setPaused] = useState(false);
+
   return (
-    <div className="trust" aria-label="Companies and clients I’ve worked with">
-      <span className="mono trust-label">Worked with</span>
+    <div className="trust">
+      <span className="mono trust-label" id="trust-h">
+        Worked with
+      </span>
       <div className="trust-mask">
         {/* The list is rendered twice so the -50% loop is seamless; the copy is hidden from AT */}
-        <div className="trust-track">
+        <ul className={`trust-track${paused ? " paused" : ""}`} aria-labelledby="trust-h">
           {clients.map((c) => (
-            <span key={c}>{c}</span>
+            <li key={c}>{c}</li>
           ))}
           {clients.map((c) => (
-            <span key={`${c}-copy`} aria-hidden="true">
+            <li key={`${c}-copy`} aria-hidden="true">
               {c}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
+      <button className="trust-toggle mono" type="button" aria-pressed={paused} onClick={() => setPaused((p) => !p)}>
+        {paused ? "Play" : "Pause"}
+        <span className="sr-only"> client list animation</span>
+      </button>
     </div>
   );
 }

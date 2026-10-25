@@ -23,7 +23,7 @@ export default function Contact() {
   return (
     <section className="contact" id="contact" aria-labelledby="ct-h">
       <div className="wrap">
-        <span className="idx mono reveal">05 / Contact</span>
+        <span className="idx mono reveal">06 / Contact</span>
         <h2 id="ct-h" className="reveal">
           Let’s build <br />
           <span className="it">something.</span>

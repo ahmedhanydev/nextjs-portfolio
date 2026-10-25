@@ -1,5 +1,9 @@
 import { experience } from "@/data/portfolio";
 
+// Bullets mark key results as **bold**; render those parts as <strong>
+const emphasize = (text: string) =>
+  text.split(/\*\*(.+?)\*\*/).map((part, i) => (i % 2 ? <strong key={i}>{part}</strong> : part));
+
 export default function Experience() {
   return (
     <section id="experience" aria-labelledby="xp-h">
@@ -21,7 +25,14 @@ export default function Experience() {
                   <span className="yr mono">{job.years}</span>
                   <h3>
                     {job.company}
-                    {job.now && <span className="now">Now</span>}
+                    {job.now && (
+                      <>
+                        <span className="sr-only"> (current role)</span>
+                        <span className="now" aria-hidden="true">
+                          Now
+                        </span>
+                      </>
+                    )}
                   </h3>
                   <span className="role">{job.role}</span>
                   <span className="pm" aria-hidden="true">
@@ -31,7 +42,7 @@ export default function Experience() {
                 <div className="body">
                   <ul>
                     {job.bullets.map((b) => (
-                      <li key={b}>{b}</li>
+                      <li key={b}>{emphasize(b)}</li>
                     ))}
                   </ul>
                 </div>

@@ -1,7 +1,5 @@
 import Image from "next/image";
 import CountUp from "@/components/CountUp";
-import HeroClock from "@/components/HeroClock";
-import XRayLens from "@/components/XRayLens";
 import { facts, site } from "@/data/portfolio";
 
 export default function Hero() {
@@ -14,9 +12,6 @@ export default function Hero() {
             Available for work
           </span>
           <span>{site.role}</span>
-          <span>
-            {site.location} · <HeroClock />
-          </span>
         </div>
 
         <div className="hero-top">
@@ -33,8 +28,8 @@ export default function Hero() {
           <figure className="portrait">
             <Image
               src={site.portrait}
-              width={760}
-              height={950}
+              width={1200}
+              height={1600}
               sizes="(max-width: 820px) 200px, 25vw"
               priority
               alt={`Portrait of ${site.name}`}
@@ -68,7 +63,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <XRayLens />
     </header>
   );
 }

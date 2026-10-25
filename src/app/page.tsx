@@ -3,7 +3,8 @@ import TrustMarquee from "@/components/TrustMarquee";
 import Work from "@/components/Work";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
-import Stack from "@/components/Stack";
+import Skills from "@/components/Skills";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -14,7 +15,8 @@ export default function Home() {
       <Work />
       <Experience />
       <Education />
-      <Stack />
+      <Skills />
+      <Testimonials />
       <Contact />
     </>
   );
