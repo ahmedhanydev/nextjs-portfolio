@@ -122,6 +122,22 @@ export const projects: Project[] = [
     img: "/images/projects/t-shop.jpg",
     href: "https://t-shop-app.vercel.app/",
   },
+  {
+    title: "Nifty",
+    desc: "A playful site with interactive elements, smooth transitions and scroll effects.",
+    kind: "Personal · Motion",
+    stack: "React · Framer Motion · CSS",
+    img: "/images/projects/nifty2.jpeg",
+    href: "https://nifty-website-two.vercel.app/",
+  },
+  {
+    title: "Omnifood",
+    desc: "A responsive landing page for a meal-subscription service, in plain HTML and CSS.",
+    kind: "Personal · Landing page",
+    stack: "HTML · CSS · JavaScript",
+    img: "/images/projects/Omnifood.png",
+    href: "https://omnifood-sable-xi.vercel.app/",
+  },
 ];
 
 export const experience: Job[] = [

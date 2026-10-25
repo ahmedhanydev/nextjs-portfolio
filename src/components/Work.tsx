@@ -161,7 +161,7 @@ export default function Work() {
                   More on <span className="or">GitHub</span>
                 </span>
               </div>
-              <CardInfo kind="Personal builds" title="Nifty, MTrend…" href="github.com" desc="Experiments, side projects and the code behind them." stack={["Open source"]} />
+              <CardInfo kind="Personal builds" title="Side projects" href="github.com" desc="Experiments, side projects and the code behind them." stack={["Open source"]} />
             </a>
           </div>
 
