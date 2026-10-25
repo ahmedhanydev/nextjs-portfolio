@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+# this project uses npm/pnpm; a bun lockfile would make Vercel install with Bun
+bun.lock
+bun.lockb
 
 # testing
 /coverage
@@ -18,15 +21,28 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
+.eslintcache
+
+# editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
 
 # debug
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
-# local env files
+# env files (secrets); keep the example template
+.env
 .env*.local
+.env.*
+!.env.example
 
 # vercel
 .vercel
